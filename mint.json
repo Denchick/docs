@@ -52,11 +52,11 @@
       "pages": [
         "introduction",
         {
-          "group": "Concepts",
+          "group": "Overview",
           "pages": [
-            "concepts/overview",
-            "concepts/prerequisites",
-            "concepts/cluster"
+            "overview/router",
+            "overview/coordinator",
+            "overview/balancer"
           ]
         },
         {
@@ -69,7 +69,8 @@
             "configuration/router",
             "configuration/sharding" 
           ]
-        }
+        },
+        "design"
       ]
     },
     {

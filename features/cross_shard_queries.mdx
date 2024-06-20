@@ -2,4 +2,6 @@
 title: 'Limited cross-shard queries'
 ---
 
-SPQR router supports limited subset of cross-shard queries. This is made from best-effort logic in a non-disruptive and non-consistent way and is used mainly for testing purposes. Please do not use this feature in your production, cross-shard snapshot will be inconsistent.
+SPQR router supports limited subset of cross-shard queries. For example, `SELECT * FROM` without `WHERE` clause or DDL commands. This is made from best-effort logic in a non-disruptive and non-consistent way and is used mainly for testing purposes. Please be carefull using this feature in production, cross-shard snapshot will be inconsistent.
+
+You can force disable this feature by adding a TODO in your router config file.
