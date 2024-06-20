@@ -2,19 +2,24 @@
 title: Welcome to SPQR
 ---
 
-## What is Stateless Postgres Query Router?
+## What is SPQR?
 
-SPQR is a production-ready system for horizontal scaling of PostgreSQL via sharding.
+SPQR (Stateless Postgres Query Router) is a production-ready system for horizontal scaling of PostgreSQL via sharding.
 
 ## Why SPQR
 
 PostgreSQL is awesome, but it's hard to manage a single database with some terabytes of data and 10<sup>5</sup>+ queries per second. Existing sharding solutions focus on analytical and hybrid workloads (OLAP, HTAP). Moreover, most of those solutions do not provide a simple, painless path for the monolith \<-\> sharded transitions. That's why the [Data Platform](https://cloud.yandex.com/en-ru/services#data-platform) team of Yandex.Cloud designed SPQR.
 
-## What were we aiming for when we created SPQR?
+Our team has been exploring different approaches to sharding a PostgreSQL cluster for a long time.  We have considered FDW-based sharding, CustomNode-based sharding, C-implemented lightweight query routing, and finally came to the SPQR design.
 
+SPQR is a good fit for:
 
+- Developers who are comfortable with Postgres and prefer not to use other database engines
+- Developers who cannot or do not wish to implement sharding logic on the application level
+- A database that is well splitted by a sharding key
+- TODO как сказать, что 90% запросов выполняется на конкретном шарде?
 
-## Getting Started
+## Get Started
 
 The fastest way to create an instance is by pulling the SPQR docker image and running it locally. TODO check this part
 
