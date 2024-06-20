@@ -1,91 +1,87 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
-  "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
-  },
+  "name": "SPQR",
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#defd42",
+    "light": "#defd42",
+    "dark": "#defd42",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#3f536f",
+      "to": "#3f536f"
     }
+  },
+  "modeToggle": {
+    "default": "dark"
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Blog",
+      "url": "https://spqr-blog"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "type": "github",
+    "url": "https://github.com/pg-sharding/spqr"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "tabs": [],
   "anchors": [
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "url": "/"
     },
     {
       "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "icon": "telegram",
+      "url": "https://t.me/+jMGhyjwicpI3ZWQy"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Releases",
+      "icon": "clock",
+      "url": "https://github.com/pg-sharding/spqr/releases"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Documentation",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        {
+          "group": "Concepts",
+          "pages": [
+            "concepts/overview",
+            "concepts/prerequisites",
+            "concepts/cluster"
+          ]
+        },
+        {
+          "group": "Configuration",
+          "pages": [
+            "configuration/balancer",
+            "configuration/coordinator",
+            "configuration/infra",
+            "configuration/mover",
+            "configuration/router",
+            "configuration/sharding" 
+          ]
+        }
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Features",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "features/sharding",
+        "features/pooling",
+        "features/fault_tolerance",
+        "features/data_migrations",
+        "features/console",
+        "features/authentication"
       ]
     }
-  ],
-  "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
-  }
+  ]
 }
