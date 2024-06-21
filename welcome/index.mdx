@@ -2,6 +2,8 @@
 title: Welcome to SPQR
 ---
 
+import DockerImage from '/snippets/docker_image.mdx';
+
 ## What is SPQR?
 
 SPQR (Stateless Postgres Query Router) is a production-ready system for horizontal scaling of PostgreSQL via sharding.
@@ -21,19 +23,9 @@ SPQR is a good fit for:
 
 ## Get Started
 
-The fastest way to create an instance is by pulling the SPQR docker image and running it locally. TODO check this part
+The fastest way to create an instance is by pulling the SPQR docker image and running it locally.
 
-```bash
-docker run \
-  -v ./*path_to_config*:/router.yaml \
-  -e ROUTER_CONFIG=/router.yaml \
-  -e ROUTER_LOG=/dev/stdout \
-  -p 0.0.0.0:6432:6432/tcp \
-  -p :::6432:6432/tcp \
-  -p 0.0.0.0:7000:7000/tcp \
-  -p :::7000:7000/tcp \
-  spqr-router
-```
+<DockerImage />
 
 To connect to SPQR Router, install `psql` and run
 
@@ -43,31 +35,31 @@ psql -h <hostname> -U <user> -d <dbname> -p <port> -W
 
 <CardGroup cols={2}>
   <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
+    title="Get started"
+    icon="rocket"
+    href="/welcome/get_started"
   >
-    Customize your docs to your company's colors and brands
+    Start sharding your PostgreSQL cluster in 5 minutes
   </Card>
   <Card
-    title="Reference APIs"
+    title="Internals"
     icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
+    href="/internals/balancing"
   >
-    Automatically generate endpoints from an OpenAPI spec
+    Learn more how SPQR works under the hood
   </Card>
   <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
+    title="Features"
     icon="stars"
-    href="https://mintlify.com/customers"
+    href="/features/sharding"
   >
-    Check out our showcase of our favorite documentation
+    Main SPQR features
+  </Card>
+  <Card
+    title="Configuration"
+    icon="screwdriver-wrench"
+    href="/configuration/balancer"
+  >
+    The complete Configuration reference
   </Card>
 </CardGroup>

@@ -1,0 +1,12 @@
+```bash
+# TODO check this
+docker run \
+  -v ./*path_to_config*:/router.yaml \
+  -e ROUTER_CONFIG=/router.yaml \
+  -e ROUTER_LOG=/dev/stdout \
+  -p 0.0.0.0:6432:6432/tcp \
+  -p :::6432:6432/tcp \
+  -p 0.0.0.0:7000:7000/tcp \
+  -p :::7000:7000/tcp \
+  spqr-router
+```

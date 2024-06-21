@@ -50,13 +50,23 @@
     {
       "group": "Documentation",
       "pages": [
-        "introduction",
+        "welcome/index",
+        "welcome/get_started",
         {
-          "group": "Overview",
+          "group": "Features",
           "pages": [
-            "overview/router",
-            "overview/coordinator",
-            "overview/balancer"
+            "features/sharding",
+            "features/pooling",
+            "features/fault_tolerance",
+            "features/data_balancing",
+            "features/cross_shard_queries",
+            "features/multiple_servers_and_failover",
+            "features/protocol",
+            "features/read_only",
+            "features/perfomance",
+            "features/authentication",
+            "features/config_reloading",
+            "features/statistics"
           ]
         },
         {
@@ -70,18 +80,14 @@
             "configuration/sharding" 
           ]
         },
-        "design"
-      ]
-    },
-    {
-      "group": "Features",
-      "pages": [
-        "features/sharding",
-        "features/pooling",
-        "features/fault_tolerance",
-        "features/data_migrations",
-        "features/console",
-        "features/authentication"
+        {
+          "group": "Internals",
+          "pages": [
+            "internals/balancing",
+            "internals/query_path"
+          ]
+        },
+        "welcome/design"
       ]
     }
   ]
