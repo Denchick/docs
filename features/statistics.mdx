@@ -4,7 +4,7 @@ title: 'Statistics'
 
 You can get access to statistics in router's administrative console via [SHOW command](https://github.com/pg-sharding/spqr/blob/master/yacc/console/gram.y#L319).
 
-```
+```sql
 SHOW clients WHERE server_id = spqr_shard_1:6432;
  client_id | user | dbname | server_id | router_address | router_time_0.75 | shard_time_0.75 
 -----------+------+--------+-----------+----------------+------------------+-----------------
