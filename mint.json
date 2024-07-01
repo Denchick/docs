@@ -70,14 +70,12 @@
           ]
         },
         {
-          "group": "Configuration",
+          "group": "Configuration Guide",
           "pages": [
-            "configuration/balancer",
-            "configuration/coordinator",
-            "configuration/infra",
-            "configuration/mover",
             "configuration/router",
-            "configuration/sharding" 
+            "configuration/coordinator",
+            "configuration/balancer",
+            "configuration/infra"
           ]
         },
         {
