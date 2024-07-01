@@ -3,18 +3,18 @@
   "name": "SPQR",
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#defd42",
-    "light": "#defd42",
-    "dark": "#defd42",
+    "primary": "#5382ff",
+    "light": "#e2ebff",
+    "dark": "#5382ff",
     "anchors": {
-      "from": "#3f536f",
-      "to": "#3f536f"
+      "from": "#5382ff",
+      "to": "#e2ebff"
     }
   },
   "modeToggle": {
-    "default": "dark"
+    "default": "light"
   },
-  "topbarLinks": [
+  "_topbarLinks": [
     {
       "name": "Blog",
       "url": "https://spqr-blog"
