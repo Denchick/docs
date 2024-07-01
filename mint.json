@@ -81,8 +81,18 @@
           ]
         },
         {
+          "group": "Cluster Components",
+          "pages": [
+            "cluster_components/overview",
+            "cluster_components/shard",
+            "cluster_components/router",
+            "cluster_components/coordinator"
+          ]
+        },
+        {
           "group": "Internals",
           "pages": [
+            "internals/console",
             "internals/balancing",
             "internals/query_path"
           ]
