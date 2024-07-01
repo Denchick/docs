@@ -81,20 +81,20 @@
           ]
         },
         {
-          "group": "Cluster Components",
+          "group": "Sharding",
           "pages": [
-            "cluster_components/overview",
-            "cluster_components/shard",
-            "cluster_components/router",
-            "cluster_components/coordinator"
-          ]
-        },
-        {
-          "group": "Internals",
-          "pages": [
-            "internals/console",
-            "internals/balancing",
-            "internals/query_path"
+            "welcome/get_started",
+            {
+              "group": "Cluster Components",
+              "pages": [
+                "sharding/cluster_components/overview",
+                "sharding/cluster_components/shard",
+                "sharding/cluster_components/router",
+                "sharding/cluster_components/coordinator"
+              ]
+            },
+            "sharding/administration",
+            "sharding/balancing"
           ]
         },
         "welcome/design"

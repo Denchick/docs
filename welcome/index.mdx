@@ -10,7 +10,7 @@ SPQR (Stateless Postgres Query Router) is a production-ready system for horizont
 
 ## Why SPQR
 
-PostgreSQL is awesome, but it's hard to manage a single database with some terabytes of data and 10<sup>5</sup>+ queries per second. Existing sharding solutions focus on analytical and hybrid workloads (OLAP, HTAP). Moreover, most of those solutions do not provide a simple, painless path for the monolith \<-\> sharded transitions. That's why the [Data Platform](https://cloud.yandex.com/en-ru/services#data-platform) team of Yandex.Cloud designed SPQR.
+PostgreSQL is awesome, but it's hard to manage a single database with some terabytes of data and 10<sup>5</sup>+ queries per second. Existing sharding solutions focus on analytical and hybrid workloads (OLAP, HTAP). Moreover, most of those solutions do not provide a simple, painless path for the monolith \<-\> sharded transitions. That's why the<br /> [Data Platform team of Yandex.Cloud](https://cloud.yandex.com/en-ru/services#data-platform) designed SPQR.
 
 Our team has been exploring different approaches to sharding a PostgreSQL cluster for a long time.  We have considered FDW-based sharding, CustomNode-based sharding, C-implemented lightweight query routing, and finally came to the SPQR design.
 
