@@ -1,3 +1,24 @@
 ---
 title: Balancer
 ---
+
+import ConfigurationFormat from '/snippets/spqr_configuration.mdx';
+
+<ConfigurationFormat name="coordinator"/>
+
+Refer to the `pkg/config/coordinator.go` file for the most up-to-date configuration options.
+
+## Balancer Settings
+
+| Setting          | Description                                           | Possible Values       |
+|------------------|-------------------------------------------------------|-----------------------|
+| `log_level `     | The level of logging output.                          | `debug`, `info`, `warning`, `error`, `fatal`|
+| `coordinator_address` | TODO                                             | Any valid hostname    |
+| `shards_config`  | TODO                                                  | Any valid filepath    |
+| `cpu_threshold`  | TODO                                                  | Any valid port number |
+| `space_threshold` | TODO                                                 | Any valid port number |
+| `stat_interval_sec` | TODO                                               | Any valid hostname    |
+| `max_move_count` | TODO                                               | Any valid hostname    |
+| `keys_per_move` | TODO                                               | Any valid hostname    |
+| `timeout`   | TODO                                                  | Any valid hostname    |
+

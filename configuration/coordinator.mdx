@@ -2,14 +2,23 @@
 title: Coordinator
 ---
 
-The SPQR Router configuration can be specified in JSON, TOML, or YAML format. The configuration file passing as a parameter to run command:
+import ConfigurationFormat from '/snippets/spqr_configuration.mdx';
 
-```bash
-spqr-coordinator run --config ./examples/coordinator.yaml
-```
+<ConfigurationFormat name="coordinator"/>
 
 Refer to the `pkg/config/coordinator.go` file for the most up-to-date configuration options.
 
 ## Coordinator Settings
 
-TODO generate
+| Setting          | Description                                           | Possible Values       |
+|------------------|-------------------------------------------------------|-----------------------|
+| `log_level `     | The level of logging output.                          | `debug`, `info`, `warning`, `error`, `fatal`|
+| `qdb_addr`       | TODO                                                  | Any valid hostname    |
+| `host`           | The host address the coordinator listens on.          | Any valid hostname    |
+| `coordinator_port` | The port number for the coordinator.                | Any valid port number |
+| `grpc_api_port`  | The port number for the gRPC API.                     | Any valid port number |
+| `auth`           | TODO                                                  | Any valid hostname    |
+| `frontend_tls`   | TODO                                                  | Any valid hostname    |
+| `use_systemd_notifier` | Whether to use systemd notifier.                | `true`, `false`       |
+| `systemd_notifier_debug` | Whether to run systemd notifier in debug mode.| `true`, `false`       |
+
