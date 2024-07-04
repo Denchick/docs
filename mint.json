@@ -74,8 +74,7 @@
           "pages": [
             "configuration/router",
             "configuration/coordinator",
-            "configuration/balancer",
-            "configuration/infra"
+            "configuration/balancer"
           ]
         },
         {
@@ -98,8 +97,7 @@
                 "sharding/console/concepts",
                 "sharding/console/sql_commands"
               ]
-            },
-            "sharding/balancing"
+            }
           ]
         },
         "welcome/design"

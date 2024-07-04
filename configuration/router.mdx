@@ -2,10 +2,11 @@
 title: Router
 ---
 
-import ConfigurationFormat from '/snippets/spqr_configuration.mdx';
+The SPQR Router configuration can be specified in JSON, TOML, or YAML format. The configuration file passing as a parameter to run command:
 
-<ConfigurationFormat name="router"/>
-
+```
+spqr-router run --config ./examples/router.yaml
+```
 
 Refer to the `pkg/config/router.go` file for the most up-to-date configuration options.
 
@@ -104,7 +105,7 @@ TODO via copilot
 | Setting          | Description                                           | Possible Values       |
 |------------------|-------------------------------------------------------|-----------------------|
 | `use_init_sql`   | Whether to execute commands from Init SQL file        | `true`, `false` |
-| `use_coordinator_init` | Whether to execute commands from Init SQL file on Coordinator | `true`, `false` |
+| `use_coordinator_init` | Whether to execute commands from Init SQL file on Router | `true`, `false` |
 | `init_sql`       | Path to SQL file that router will execute before the start | Any valid file path |
 | `memqdb_backup_path` | MemQDB backup state path. MemQDB's state restored if a file backup exists during the router startup. If there is no file, init.sql will be used | Any valid file path |
 | `memqdb_persistent` | Whether to persist router configuration in non-clustered setup | `true`, `false` |

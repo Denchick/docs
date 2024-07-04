@@ -2,9 +2,11 @@
 title: Coordinator
 ---
 
-import ConfigurationFormat from '/snippets/spqr_configuration.mdx';
+The SPQR Coordinator configuration can be specified in JSON, TOML, or YAML format. The configuration file passing as a parameter to run command:
 
-<ConfigurationFormat name="coordinator"/>
+```
+spqr-coordinator run --config ./examples/coordinator.yaml
+```
 
 Refer to the `pkg/config/coordinator.go` file for the most up-to-date configuration options.
 

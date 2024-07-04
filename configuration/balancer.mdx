@@ -2,11 +2,13 @@
 title: Balancer
 ---
 
-import ConfigurationFormat from '/snippets/spqr_configuration.mdx';
+The SPQR Balancer configuration can be specified in JSON, TOML, or YAML format. The configuration file passing as a parameter to run command:
 
-<ConfigurationFormat name="coordinator"/>
+```
+spqr-balancer run --config ./examples/balancer.yaml
+```
 
-Refer to the `pkg/config/coordinator.go` file for the most up-to-date configuration options.
+Refer to the `pkg/config/balancer.go` file for the most up-to-date configuration options.
 
 ## Balancer Settings
 
