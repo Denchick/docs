@@ -91,7 +91,14 @@
                 "sharding/cluster_components/coordinator"
               ]
             },
-            "sharding/administration",
+            {
+              "group": "Admin Console",
+              "pages": [
+                "sharding/console/how_to_connect",
+                "sharding/console/concepts",
+                "sharding/console/sql_commands"
+              ]
+            },
             "sharding/balancing"
           ]
         },
