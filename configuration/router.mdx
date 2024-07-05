@@ -33,40 +33,47 @@ Refer to the `pkg/config/router.go` file for the most up-to-date configuration o
 
 ## Frontend Rules
 
-TODO what is frontend rules?
+Frontend rule is a specification of how clients connect to the router.
 
-| Setting              | Description                                       | Possible Values       |
-|----------------------|---------------------------------------------------|-----------------------|
-| `db`                 | Database name                                     | Any valid database name |
-| `usr`                | Username                                          | Any valid username    |
-| `search_path`        | TODO
-| `auth_rule`          | See pkg/config/auth.go           
-| `pool_mode`          | Defines the pool modes.                           | `SESSION`, `TRANSACTION` |
-| `pool_discard`       |      
-| `pool_rollback`      |      
-| `pool_prepared_statement` |              
-| `pool_default`       |      
+Refer to the `FrontendRule` struct in the `pkg/config/router.go` file for the most up-to-date configuration options.
+
+| Setting                   | Description                                                                    | Possible Values          |
+|---------------------------|--------------------------------------------------------------------------------|--------------------------|
+| `db`                      | The database name to which the rule applies                                    | Any valid database name  |
+| `usr`                     | The user name for which the rule is applicable                                 | Any valid username       |
+| `search_path`             | The search path used for the database connection                               | Any valid search path    |
+| `auth_rule`               | See [General Auth Settings](./auth.go)                                         | Object of `AuthCfg`      |
+| `pool_mode`               | The mode of connection pooling used                                            | `SESSION`, `TRANSACTION` |
+| `pool_discard`            | Determines if connections are discarded from the pool under certain conditions | `true`, `false`          |
+| `pool_rollback`           | Specifies whether to execute a rollback on connections returned to the pool    | `true`, `false`          |
+| `pool_prepared_statement` | Indicates if prepared statements should be pooled                              | `true`, `false`           |
+| `pool_default`            | If set to true, uses the default pool settings defined elsewhere               | `true`, `false`          |
 
 ## Backend Rules
 
-TODO what is backend rules?
+Backend Rule is a global setting that determines how the router connects to every shard.
 
-TODO table
+Refer to the `BackendRule` struct in the `pkg/config/router.go` and `pkg/config/auth_backend.go` file for the most up-to-date configuration options.
 
-## Shard Mapping Settings
+| Setting              | Description                                                       | Possible Values            |
+|----------------------|-------------------------------------------------------------------|----------------------------|
+| `db`                 | The database name to connect to.                                  | Any valid database name    |
+| `usr`                | The username for database authentication.                         | Any valid username         |
+| `auth_rules`         | A map of authentication rules for backend connections.            | Map of string keys to `AuthBackendCfg` objects. |
+| `auth_rule`          | The default auth rule. On object with `usr` and `password` fields | An `AuthBackendCfg` object |
+| `pool_default`       | Indicates if the connection should use the default pool settings. | `true` or `false`          |
+| `connection_limit`   | The maximum number of connections allowed to the backend.         | Any integer value          |
+| `connection_retries` | The number of retries for a failed connection attempt.            | Any integer value          |
 
-A map from a shard name to Shard Struct presented below.
+## Shards
 
-## Auth Settings
+Map of string to Shard objects. Refer to the `Shard` struct in the `pkg/config/router.go` file for the most up-to-date configuration options.
 
-TODO via copilot
-
-## Workload Settings
-
-| Setting               | Description                                       | Possible Values       |
-|-----------------------|---------------------------------------------------|-----------------------|
-| `workload_file`       |
-| `workload_batch_size` |
+| Setting | Description                             | Possible Values         |
+|---------|-----------------------------------------|-------------------------|
+| `hosts` | A list of host addresses for the shard. | Array of host addresses |
+| `type`  | Use `DATA` always                       | `DATA`, `WORLD`         |
+| `tls`   | See [auth.mdx](./auth)                  | Object of `TLSConfig`   |
 
 ## Statistics Settings
 
@@ -76,11 +83,11 @@ TODO via copilot
 
 ## Feature Flags
 
-| Setting                  | Description                                   | Possible Values       |
-|--------------------------|-----------------------------------------------|-----------------------|
-| `maintain_params`        | Whether to maintain parameters flag.          | `true`, `false`       |
-| `with_jaeger`            | Whether to integrate with Jaeger for tracing. | `true`, `false`       |
-| `world_shard_fallback`   | Whether to enable fallback to world shard.    | `true`, `false`       |
+| Setting                  | Description                                   | Possible Values |
+|--------------------------|-----------------------------------------------|-----------------|
+| `maintain_params`        | Whether to maintain parameters flag.          | `true`, `false` |
+| `with_jaeger`            | Whether to integrate with Jaeger for tracing. | `true`, `false` |
+| `world_shard_fallback`   | Whether to enable fallback to world shard.    | `true`, `false` |
 
 
 ## Mode Settings
@@ -89,23 +96,23 @@ TODO via copilot
 |------------------|-------------------------------------------------------|-----------------------|
 | `pool_mode`      | Defines the pool modes.                               | `SESSION`, `TRANSACTION` |
 | `shard_type`     | Defines the shard types.                              | `DATA`, `WORLD`       |
-| `router_mode`    | TL;DR Use `PROXY` always. Defines the router modes. Local mode acts like a connection pooler, Proxy mode acts like a query router in sharded installation. | `LOCAL`, `PROXY`      |
+| `router_mode`    | TL;DR Use `PROXY` always. Defines the router modes. Local mode acts like a connection pooler, Proxy mode acts like a query router in sharded installation. | `LOCAL`, `PROXY`|
 
 ## Debug Settings
 
-| Setting          | Description                                           | Possible Values       |
-|------------------|-------------------------------------------------------|-----------------------|
-| `show_notice_messages` | Whether to show notice messages.                | `true`, `false`       |
-| `pid_file_name`  | The file name to store the process ID.                | Any valid file path   |
-| `log_file_name`  | The file name for logging output.                     | Any valid file path   |
-| `pgproto_debug`  | PostgreSQL protocol debug flag.                       | `true`, `false`       |
+| Setting          | Description                                           | Possible Values    |
+|------------------|-------------------------------------------------------|--------------------|
+| `show_notice_messages` | Whether to show notice messages.                | `true`, `false`    |
+| `pid_file_name`  | The file name to store the process ID.                | Any valid filepath |
+| `log_file_name`  | The file name for logging output.                     | Any valid filepath |
+| `pgproto_debug`  | PostgreSQL protocol debug flag.                       | `true`, `false`    |
 
 ## QDB Settings
 
-| Setting          | Description                                           | Possible Values       |
-|------------------|-------------------------------------------------------|-----------------------|
-| `use_init_sql`   | Whether to execute commands from Init SQL file        | `true`, `false` |
-| `use_coordinator_init` | Whether to execute commands from Init SQL file on Router | `true`, `false` |
-| `init_sql`       | Path to SQL file that router will execute before the start | Any valid file path |
-| `memqdb_backup_path` | MemQDB backup state path. MemQDB's state restored if a file backup exists during the router startup. If there is no file, init.sql will be used | Any valid file path |
-| `memqdb_persistent` | Whether to persist router configuration in non-clustered setup | `true`, `false` |
+| Setting                | Description                                                    | Possible Values       |
+|------------------------|----------------------------------------------------------------|-----------------------|
+| `use_init_sql`         | Whether to execute commands from Init SQL file                 | `true`, `false`       |
+| `use_coordinator_init` | Whether to execute commands from Init SQL file on Router       | `true`, `false`       |
+| `init_sql`             | Path to SQL file that router will execute before the start     | Any valid file path   |
+| `memqdb_backup_path`   | MemQDB backup state path. MemQDB's state restored if a file backup exists during the router startup. If there is no file, init.sql will be used | Any valid file path |
+| `memqdb_persistent`    | Whether to persist router configuration in non-clustered setup | `true`, `false`       |
