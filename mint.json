@@ -74,7 +74,8 @@
           "pages": [
             "configuration/router",
             "configuration/coordinator",
-            "configuration/balancer"
+            "configuration/balancer",
+            "configuration/auth"
           ]
         },
         {
