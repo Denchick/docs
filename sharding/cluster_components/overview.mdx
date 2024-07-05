@@ -18,19 +18,19 @@ What does a typical application look like? Backends connect to a PostgreSQL clus
 
 We had the idea that we could put a proxy between the backends and the PostgreSQL clusters. The proxy would receive requests, determine which shard the request should be sent to, wait for a response from that shard, and then return the result to the backend.
 
-![typical](images/components_2.png)
+![typical](/images/components_2.png)
 
 Actually, this is what we did. This thing is called the **SPQR Router**.
 
-![typical](images/components_3.png)
+![typical](/images/components_3.png)
 
 The router works using the PostgreSQL protocol, so the application doesn't even realize that it's communicating with a Golang application, not a regular PostgreSQL cluster. Due to this, we achive a relatively high performance per one router.
 
 Clearly, in this configuration, the router is a bottleneck and a single point of failure. Therefore, we have designed a system where **many routers can work in parallel**. In fact, thousands of routers opeating in parallel should not be a problem.
 
-![typical](images/components_4.png)
+![typical](/images/components_4.png)
 
 But in order for routers to have the same metadata, we need to store this information somewhere. We store it in QDB, which is an regular [etcd cluster](https://etcd.io). Metadata changes are performed by the **SPQR Coordinator**, so the coordinator makes sure the routers have the same information.
 
-![typical](images/components_5.png)
+![typical](/images/components_5.png)
 
