@@ -8,7 +8,7 @@ The SPQR Router configuration can be specified in JSON, TOML, or YAML format. Th
 spqr-router run --config ./examples/router.yaml
 ```
 
-Refer to the `pkg/config/router.go` file for the most up-to-date configuration options.
+Refer to the [pkg/config/router.go](https://github.com/pg-sharding/spqr/blob/master/pkg/config/router.go) file for the most up-to-date configuration options.
 
 ## General Settings
 
@@ -35,7 +35,7 @@ Refer to the `pkg/config/router.go` file for the most up-to-date configuration o
 
 Frontend rule is a specification of how clients connect to the router.
 
-Refer to the `FrontendRule` struct in the `pkg/config/router.go` file for the most up-to-date configuration options.
+Refer to the `FrontendRule` struct in the [pkg/config/router.go](https://github.com/pg-sharding/spqr/blob/master/pkg/config/router.go) file for the most up-to-date configuration options.
 
 | Setting                   | Description                                                                    | Possible Values          |
 |---------------------------|--------------------------------------------------------------------------------|--------------------------|
@@ -53,7 +53,7 @@ Refer to the `FrontendRule` struct in the `pkg/config/router.go` file for the mo
 
 Backend Rule is a global setting that determines how the router connects to every shard.
 
-Refer to the `BackendRule` struct in the `pkg/config/router.go` and `pkg/config/auth_backend.go` file for the most up-to-date configuration options.
+Refer to the `BackendRule` struct in the [pkg/config/router.go](https://github.com/pg-sharding/spqr/blob/master/pkg/config/router.go) and [pkg/config/auth_backend.go](https://github.com/pg-sharding/spqr/blob/master/pkg/config/auth_backend.go) file for the most up-to-date configuration options.
 
 | Setting              | Description                                                       | Possible Values            |
 |----------------------|-------------------------------------------------------------------|----------------------------|
@@ -67,7 +67,7 @@ Refer to the `BackendRule` struct in the `pkg/config/router.go` and `pkg/config/
 
 ## Shards
 
-Map of string to Shard objects. Refer to the `Shard` struct in the `pkg/config/router.go` file for the most up-to-date configuration options.
+Map of string to Shard objects. Refer to the `Shard` struct in the [pkg/config/router.go](https://github.com/pg-sharding/spqr/blob/master/pkg/config/router.go) file for the most up-to-date configuration options.
 
 | Setting | Description                             | Possible Values         |
 |---------|-----------------------------------------|-------------------------|
