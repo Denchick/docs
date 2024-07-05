@@ -8,19 +8,4 @@ The SPQR Balancer configuration can be specified in JSON, TOML, or YAML format. 
 spqr-balancer run --config ./examples/balancer.yaml
 ```
 
-Refer to the `pkg/config/balancer.go` file for the most up-to-date configuration options.
-
-## Balancer Settings
-
-| Setting          | Description                                           | Possible Values       |
-|------------------|-------------------------------------------------------|-----------------------|
-| `log_level `     | The level of logging output.                          | `debug`, `info`, `warning`, `error`, `fatal`|
-| `coordinator_address` | Coordinator address in "host:port" format        | Any valid "host:port" |
-| `shards_config`  | TODO                                                  | Any valid filepath    |
-| `cpu_threshold`  | The CPU threshold on the shard at which balancing starts | Floating-point number from 0 to 1 |
-| `space_threshold` | TODO                                                 | Any valid port number |
-| `stat_interval_sec` | TODO                                               | Any valid hostname    |
-| `max_move_count` | TODO                                               | Any valid hostname    |
-| `keys_per_move` | TODO                                               | Any valid hostname    |
-| `timeout`   | TODO                                                  | Any valid hostname    |
-
+Work in progress. Refer to the `pkg/config/balancer.go` file for the most up-to-date configuration options.
